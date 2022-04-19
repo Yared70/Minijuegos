@@ -16,7 +16,7 @@ public class Ahorcado {
 
     public void setHistorial(TreeMap<Integer, Partida> historial) {
         this.historial = historial;
-    }
+     }
 
     class Partida{
 
