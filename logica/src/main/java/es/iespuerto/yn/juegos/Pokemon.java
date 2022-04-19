@@ -5,24 +5,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TreeMap;
 
-public class Partida {
+public class Pokemon {
 
     private TreeMap<Integer, Entrenador> historial;
 
-    public JuegoPokemon(TreeMap<Integer, Partida.Entrenador> historial) {
+    public JuegoPokemon(TreeMap<Integer, Pokemon.Partida> historial) {
 
-        this.historial = new TreeMap<Integer, Partida.Entrenador>();
+        this.historial = new TreeMap<Integer, Pokemon.Partida>();
     }
 
-    public TreeMap<Integer, Partida.Entrenador> getHistorial() {
+    public TreeMap<Integer, Pokemon.Partida> getHistorial() {
         return historial;
     }
 
-    public void setHistorial(TreeMap<Integer, Partida.Entrenador> historial) {
+    public void setHistorial(TreeMap<Integer, Pokemon.Partida> historial) {
         this.historial = historial;
     }
 
-    class Entrenador{
+    class Partida{
 
         private Integer id;
         private Jugador jugador;
@@ -30,7 +30,7 @@ public class Partida {
         private Date fecha;
         private boolean victoria;
 
-        public Entrenador(Jugador jugador) {
+        public Partida(Jugador jugador) {
             Integer id = (int) Math.random() * 100000;
             while (historial.containsKey(id)) {
                 id = (int) Math.random() * 100000;
