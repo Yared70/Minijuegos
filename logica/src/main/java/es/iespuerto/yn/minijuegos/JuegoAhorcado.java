@@ -2,11 +2,11 @@ package es.iespuerto.yn.minijuegos;
 
 import java.util.*;
 
-public class JuegoAhorcado {
+public class Ahorcado {
 
     private TreeMap<Integer, Partida> historial;
 
-    public JuegoAhorcado() {
+    public Ahorcado() {
         this.historial = new TreeMap<Integer, Partida>();
     }
 

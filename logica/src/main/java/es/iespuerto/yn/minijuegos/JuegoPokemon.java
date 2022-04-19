@@ -5,24 +5,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TreeMap;
 
-public class JuegoPokemon {
+public class Partida {
 
-    private TreeMap<Integer, Partida> historial;
+    private TreeMap<Integer, Entrenador> historial;
 
-    public JuegoPokemon(TreeMap<Integer, JuegoSnake.Partida> historial) {
+    public JuegoPokemon(TreeMap<Integer, Partida.Entrenador> historial) {
 
-        this.historial = new TreeMap<Integer, JuegoPokemon.Partida>();
+        this.historial = new TreeMap<Integer, Partida.Entrenador>();
     }
 
-    public TreeMap<Integer, JuegoPokemon.Partida> getHistorial() {
+    public TreeMap<Integer, Partida.Entrenador> getHistorial() {
         return historial;
     }
 
-    public void setHistorial(TreeMap<Integer, JuegoPokemon.Partida> historial) {
+    public void setHistorial(TreeMap<Integer, Partida.Entrenador> historial) {
         this.historial = historial;
     }
 
-    class Partida{
+    class Entrenador{
 
         private Integer id;
         private Jugador jugador;
@@ -30,7 +30,7 @@ public class JuegoPokemon {
         private Date fecha;
         private boolean victoria;
 
-        public Partida(Jugador jugador) {
+        public Entrenador(Jugador jugador) {
             Integer id = (int) Math.random() * 100000;
             while (historial.containsKey(id)) {
                 id = (int) Math.random() * 100000;
@@ -84,13 +84,13 @@ public class JuegoPokemon {
 
         private String nombre;
         private Integer pp;
-        private Double daño;
+        private Double danio;
         private Tipo tipo;
 
-        public Movimiento(String nombre, Integer pp, Double daño, Tipo tipo) {
+        public Movimiento(String nombre, Integer pp, Double danio, Tipo tipo) {
             this.nombre = nombre;
             this.pp = pp;
-            this.daño = daño;
+            this.danio = danio;
             this.tipo = tipo;
         }
 
@@ -110,12 +110,12 @@ public class JuegoPokemon {
             this.pp = pp;
         }
 
-        public Double getDaño() {
-            return daño;
+        public Double getDanio() {
+            return danio;
         }
 
-        public void setDaño(Double daño) {
-            this.daño = daño;
+        public void setDanio(Double danio) {
+            this.danio = danio;
         }
 
         public Tipo getTipo() {

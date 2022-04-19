@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TreeMap;
 
-public class JuegoSnake {
+public class Snake {
 
     private TreeMap<Integer, Partida> historial;
 
-    public JuegoSnake(TreeMap<Integer, Partida> historial) {
+    public Snake(TreeMap<Integer, Partida> historial) {
 
         this.historial = new TreeMap<Integer, Partida>();
     }
