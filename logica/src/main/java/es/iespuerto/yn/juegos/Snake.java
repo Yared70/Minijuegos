@@ -7,11 +7,16 @@ import java.util.TreeMap;
 public class Snake {
 
     private TreeMap<Integer, Partida> historial;
-
+    /**
+     * Constructor con un parametro
+     * @param historial historial de la partida
+     */
     public Snake(TreeMap<Integer, Partida> historial) {
 
         this.historial = new TreeMap<Integer, Partida>();
     }
+
+    //Getters y Setters
 
     public TreeMap<Integer, Partida> getHistorial() {
         return historial;
@@ -28,7 +33,10 @@ public class Snake {
         private ArrayList<String> snake;
         private Date fecha;
         private boolean victoria;
-
+        /**
+         * Constructor con un parametro
+         * @param jugador
+         */
         public Partida(Jugador jugador) {
 
             Integer id = (int)Math.random()*100000;
@@ -42,6 +50,8 @@ public class Snake {
             this.victoria = false;
         }
 
+        //Getters y Setters
+        
         public int getId() {
             return id;
         }

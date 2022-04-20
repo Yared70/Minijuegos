@@ -8,11 +8,16 @@ import java.util.TreeMap;
 public class Pokemon {
 
     private TreeMap<Integer, Entrenador> historial;
-
-    public JuegoPokemon(TreeMap<Integer, Pokemon.Partida> historial) {
+    /**
+     * Constructor con un parametro
+     * @param historial historial de la partida
+     */
+    public Pokemon(TreeMap<Integer, Pokemon.Partida> historial) {
 
         this.historial = new TreeMap<Integer, Pokemon.Partida>();
     }
+
+    //Getters y Setters
 
     public TreeMap<Integer, Pokemon.Partida> getHistorial() {
         return historial;
@@ -29,7 +34,10 @@ public class Pokemon {
         private ArrayList<Pokemon> listaPokemons;
         private Date fecha;
         private boolean victoria;
-
+        /**
+         * Constructor con un parametro
+         * @param jugador Un jugador de la partida
+         */
         public Partida(Jugador jugador) {
             Integer id = (int) Math.random() * 100000;
             while (historial.containsKey(id)) {
@@ -49,11 +57,17 @@ public class Pokemon {
         private ArrayList<Tipo> fuerteVs;
         private ArrayList<Tipo> debilVs;
 
+        /**
+         * Constructor con un parametro
+         * @param nombre nombre del tipo
+         */
         public Tipo(String nombre) {
             this.nombre = nombre;
             this.fuerteVs = new ArrayList<Tipo>();
             this.debilVs = new ArrayList<Tipo>();
         }
+
+        //Getters y Setters
 
         public String getNombre() {
             return nombre;
@@ -86,13 +100,21 @@ public class Pokemon {
         private Integer pp;
         private Double danio;
         private Tipo tipo;
-
+        /**
+         * Constructor con 4 parametros
+         * @param nombre nombre del movimiento
+         * @param pp Cantidad de pp del movimiento
+         * @param danio Cantidad de danio del movimiento
+         * @param tipo Tipo del movimiento
+         */
         public Movimiento(String nombre, Integer pp, Double danio, Tipo tipo) {
             this.nombre = nombre;
             this.pp = pp;
             this.danio = danio;
             this.tipo = tipo;
         }
+
+        //Getters y Setters
 
         public String getNombre() {
             return nombre;
@@ -137,7 +159,16 @@ public class Pokemon {
         private Tipo tipo;
         private Movimiento listaMovimientos[];
         private String asciiArt;
-
+        /**
+         * Constructor con 7 parametros 
+         * @param nombre nombre del pokemon
+         * @param vida  Cantidad de puntos vida del pokemon 
+         * @param ataque Cantidad de puntos de ataque del pokemon
+         * @param defensa Cantidad de puntos de defensa del pokemon
+         * @param nivel Nivel actual del pokemon
+         * @param tipo  Tipo del pokemon
+         * @param asciiArt Codigo asciiArt del pokemon
+         */
         public Pokemon(String nombre, Double vida,
                        Double ataque, Double defensa, Integer nivel,
                        Tipo tipo,
@@ -152,6 +183,8 @@ public class Pokemon {
             this.asciiArt = asciiArt;
         }
 
+        //Getters y Setters
+        
         public String getNombre() {
             return nombre;
         }

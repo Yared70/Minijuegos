@@ -5,11 +5,13 @@ import java.util.*;
 public class Ahorcado {
 
     private TreeMap<Integer, Partida> historial;
-
+    /**
+     * Constructor de la clase
+     */
     public Ahorcado() {
         this.historial = new TreeMap<Integer, Partida>();
     }
-
+    //Getters y Setters
     public TreeMap<Integer, Partida> getHistorial() {
         return historial;
     }
@@ -35,7 +37,11 @@ public class Ahorcado {
         private String palDif3[] = {"adaptacion", "evaluacion", "diagnostico", "circulacion",
                 "procedimiento", "trasladar", "ocupacional", "geolocalizacion", "trasnochador"
         };
-
+        /**
+         * Constructor de la clase con 2 parametros 
+         * @param jugador1 1º jugador 
+         * @param dificultad nivel de dificultad
+         */
         public Partida(Jugador jugador1, Integer dificultad) {
 
             Random rnd = new Random();
@@ -63,7 +69,11 @@ public class Ahorcado {
             }
 
         }
-
+        /**
+         * Constructor de la clase con 2 parametros 
+         * @param jugador1 1º jugador 
+         * @param jugador2 2º jugador 
+         */
         public Partida(Jugador jugador1, Jugador jugador2){
 
             Integer id = (int) Math.random() * 100000;
@@ -78,6 +88,9 @@ public class Ahorcado {
             this.dificultad = 3;
 
         }
+
+
+        //Getters y Setters
 
         public Integer getId() {
             return id;
