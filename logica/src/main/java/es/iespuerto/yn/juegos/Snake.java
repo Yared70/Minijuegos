@@ -1,4 +1,4 @@
-package es.iespuerto.yn.minijuegos;
+package es.iespuerto.yn.juegos;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,23 +8,13 @@ public class Snake {
 
     private TreeMap<Integer, Partida> historial;
     /**
-     * Constructor con un parametro
-     * @param historial historial de la partida
+     * Constructor sin parametros
      */
-    public Snake(TreeMap<Integer, Partida> historial) {
+    public Snake() {
 
         this.historial = new TreeMap<Integer, Partida>();
     }
 
-    //Getters y Setters
-
-    public TreeMap<Integer, Partida> getHistorial() {
-        return historial;
-    }
-
-    public void setHistorial(TreeMap<Integer, Partida> historial) {
-        this.historial = historial;
-    }
 
     class Partida{
 
@@ -50,47 +40,6 @@ public class Snake {
             this.victoria = false;
         }
 
-        //Getters y Setters
-        
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public Jugador getJugador() {
-            return jugador;
-        }
-
-        public void setJugador(Jugador jugador) {
-            this.jugador = jugador;
-        }
-
-        public ArrayList<String> getSnake() {
-            return snake;
-        }
-
-        public void setSnake(ArrayList<String> snake) {
-            this.snake = snake;
-        }
-
-        public Date getFecha() {
-            return fecha;
-        }
-
-        public void setFecha(Date fecha) {
-            this.fecha = fecha;
-        }
-
-        public boolean isVictoria() {
-            return victoria;
-        }
-
-        public void setVictoria(boolean victoria) {
-            this.victoria = victoria;
-        }
     }
 
 }

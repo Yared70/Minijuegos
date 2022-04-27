@@ -1,4 +1,4 @@
-package es.iespuerto.yn.minijuegos;
+package es.iespuerto.yn.juegos;
 
 public class Jugador {
 
@@ -8,6 +8,7 @@ public class Jugador {
      * @param nombre Nombre del jugador
      */
     public Jugador(String nombre) {
+
         this.nombre = nombre;
     }
     /**
@@ -18,15 +19,6 @@ public class Jugador {
         return "Jugador: " + nombre;
     }
 
-    //Getters y Setters
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
 
 }

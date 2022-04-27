@@ -1,24 +1,20 @@
-package es.iespuerto.yn.minijuegos;
+package es.iespuerto.yn.juegos;
 
 import java.util.*;
 
 public class Ahorcado {
 
     private TreeMap<Integer, Partida> historial;
+
     /**
      * Constructor de la clase
      */
     public Ahorcado() {
+
         this.historial = new TreeMap<Integer, Partida>();
     }
-    //Getters y Setters
-    public TreeMap<Integer, Partida> getHistorial() {
-        return historial;
-    }
 
-    public void setHistorial(TreeMap<Integer, Partida> historial) {
-        this.historial = historial;
-     }
+
 
     class Partida{
 
@@ -90,87 +86,7 @@ public class Ahorcado {
         }
 
 
-        //Getters y Setters
 
-        public Integer getId() {
-            return id;
-        }
-
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
-        public HashMap<Jugador, Jugador> getJugadores() {
-            return jugadores;
-        }
-
-        public void setJugadores(HashMap<Jugador, Jugador> jugadores) {
-            this.jugadores = jugadores;
-        }
-
-        public Integer getPuntosTotales() {
-            return puntosTotales;
-        }
-
-        public void setPuntosTotales(Integer puntosTotales) {
-            this.puntosTotales = puntosTotales;
-        }
-
-        public Integer getFallos() {
-            return fallos;
-        }
-
-        public void setFallos(Integer fallos) {
-            this.fallos = fallos;
-        }
-
-        public Integer getDificultad() {
-            return dificultad;
-        }
-
-        public void setDificultad(Integer dificultad) {
-            this.dificultad = dificultad;
-        }
-
-        public ArrayList<String> getHistorialLetras() {
-            return historialLetras;
-        }
-
-        public void setHistorialLetras(ArrayList<String> historialLetras) {
-            this.historialLetras = historialLetras;
-        }
-
-        public String getPalabraAdivinar() {
-            return palabraAdivinar;
-        }
-
-        public void setPalabraAdivinar(String palabraAdivinar) {
-            this.palabraAdivinar = palabraAdivinar;
-        }
-
-        public String[] getPalDif1() {
-            return palDif1;
-        }
-
-        public void setPalDif1(String[] palDif1) {
-            this.palDif1 = palDif1;
-        }
-
-        public String[] getPalDif2() {
-            return palDif2;
-        }
-
-        public void setPalDif2(String[] palDif2) {
-            this.palDif2 = palDif2;
-        }
-
-        public String[] getPalDif3() {
-            return palDif3;
-        }
-
-        public void setPalDif3(String[] palDif3) {
-            this.palDif3 = palDif3;
-        }
     }
 
 }
