@@ -1,4 +1,4 @@
-package es.iespuerto.ets.presentacion;
+package es.iespuerto.ets.juegos;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package com.example;
+package es.iespuerto.yn.juegos;
 
 import static org.junit.Assert.assertTrue;
 
