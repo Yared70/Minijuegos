@@ -5,42 +5,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.TreeMap;
 
-public class Pokemon {
+public class Pokemon extends Partida {
 
-    private TreeMap<Integer, Partida> historial;
-    /**
-     * Constructor sin parametros
-     */
-    public Pokemon() {
+    private ArrayList<Criatura> Pokemons;
+    private boolean victoria;
 
-        this.historial = new TreeMap<Integer, Partida>();
+
+    public Pokemon(Integer id, Jugador jugador) {
+        super(id, jugador);
+        this.Pokemons = new ArrayList<Criatura>();
+        this.victoria = false;
     }
 
-    class Partida{
 
-        private Integer id;
-        private Jugador jugador;
-        private ArrayList<Criatura> Pokemons;
-        private Date fecha;
-        private boolean victoria;
-        /**
-         * Constructor con un parametro
-         * @param jugador Un jugador de la partida
-         */
-        public Partida(Jugador jugador) {
-            Integer id = (int) Math.random() * 100000;
-            while (historial.containsKey(id)) {
-                id = (int) Math.random() * 100000;
-            }
-            this.id = id;
-            this.jugador = jugador;
-            this.Pokemons = new ArrayList<Criatura>();
-            this.fecha = new Date();
-            this.victoria = false;
-        }
-    };
-
-    class Tipo{
+    class Tipo {
 
         private String nombre;
         private ArrayList<Tipo> fuerteVs;
@@ -48,6 +26,7 @@ public class Pokemon {
 
         /**
          * Constructor con un parametro
+         *
          * @param nombre nombre del tipo
          */
         public Tipo(String nombre) {
@@ -58,18 +37,20 @@ public class Pokemon {
 
     }
 
-    class Movimiento{
+    class Movimiento {
 
         private String nombre;
         private Integer pp;
         private Double danio;
         private Tipo tipo;
+
         /**
          * Constructor con 4 parametros
+         *
          * @param nombre nombre del movimiento
-         * @param pp Cantidad de pp del movimiento
-         * @param danio Cantidad de danio del movimiento
-         * @param tipo Tipo del movimiento
+         * @param pp     Cantidad de pp del movimiento
+         * @param danio  Cantidad de danio del movimiento
+         * @param tipo   Tipo del movimiento
          */
         public Movimiento(String nombre, Integer pp, Double danio, Tipo tipo) {
             this.nombre = nombre;
@@ -80,7 +61,7 @@ public class Pokemon {
 
     }
 
-    class Criatura{
+    class Criatura {
 
         private String nombre;
         private Double vida;
@@ -90,20 +71,22 @@ public class Pokemon {
         private Tipo tipo;
         private Movimiento listaMovimientos[];
         private String asciiArt;
+
         /**
-         * Constructor con 7 parametros 
-         * @param nombre nombre del pokemon
-         * @param vida  Cantidad de puntos vida del pokemon 
-         * @param ataque Cantidad de puntos de ataque del pokemon
-         * @param defensa Cantidad de puntos de defensa del pokemon
-         * @param nivel Nivel actual del pokemon
-         * @param tipo  Tipo del pokemon
+         * Constructor con 7 parametros
+         *
+         * @param nombre   nombre del pokemon
+         * @param vida     Cantidad de puntos vida del pokemon
+         * @param ataque   Cantidad de puntos de ataque del pokemon
+         * @param defensa  Cantidad de puntos de defensa del pokemon
+         * @param nivel    Nivel actual del pokemon
+         * @param tipo     Tipo del pokemon
          * @param asciiArt Codigo asciiArt del pokemon
          */
         public Criatura(String nombre, Double vida,
-                       Double ataque, Double defensa, Integer nivel,
-                       Tipo tipo,
-                       String asciiArt) {
+                        Double ataque, Double defensa, Integer nivel,
+                        Tipo tipo,
+                        String asciiArt) {
             this.nombre = nombre;
             this.vida = vida;
             this.ataque = ataque;
@@ -114,6 +97,8 @@ public class Pokemon {
             this.asciiArt = asciiArt;
         }
 
-    };
+    }
+
+    ;
 
 }

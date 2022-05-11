@@ -13,7 +13,7 @@ public class SnakeTest {
 
         if(snake == null){
 
-            snake = new Snake();
+            //snake = new Snake();
 
         }
 

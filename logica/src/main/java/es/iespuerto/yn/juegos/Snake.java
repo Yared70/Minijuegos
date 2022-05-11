@@ -2,44 +2,28 @@ package es.iespuerto.yn.juegos;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.TreeMap;
 
-public class Snake {
+public class Snake extends Partida{
 
-    private TreeMap<Integer, Partida> historial;
-    /**
-     * Constructor sin parametros
-     */
-    public Snake() {
+    private LinkedList<String> snake;
+    private boolean victoria;
 
-        this.historial = new TreeMap<Integer, Partida>();
-    }
+    public Snake(Integer id, Jugador jugador) {
+        super(id, jugador);
+        this.snake = new LinkedList<String>();
+        this.victoria = false;
 
-
-    class Partida{
-
-        private Integer id;
-        private Jugador jugador;
-        private ArrayList<String> snake;
-        private Date fecha;
-        private boolean victoria;
-        /**
-         * Constructor con un parametro
-         * @param jugador
-         */
-        public Partida(Jugador jugador) {
-
-            Integer id = (int)Math.random()*100000;
-            while(historial.containsKey(id)){
-                id = (int)Math.random()*100000;
-            }
-            this.id = id;
-            this.jugador = jugador;
-            this.snake = new ArrayList<String>();
-            this.fecha = new Date();
-            this.victoria = false;
-        }
 
     }
 
-}
+
+
+
+
+
+
+    }
+
+
