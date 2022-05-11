@@ -17,6 +17,12 @@ public class Pokemon extends Partida {
         this.victoria = false;
     }
 
+    public String atacar(Pokemon pokemon1,Pokemon pokemon2,Movimiento movimiento){
+        String mensaje="";
+        int ataque=;
+
+        return mensaje;
+    }
 
     class Tipo {
 
@@ -65,6 +71,7 @@ public class Pokemon extends Partida {
 
         private String nombre;
         private Double vida;
+        private Double vidaActual;
         private Double ataque;
         private Double defensa;
         private Integer nivel;
@@ -95,10 +102,36 @@ public class Pokemon extends Partida {
             this.tipo = tipo;
             this.listaMovimientos = new Movimiento[4];
             this.asciiArt = asciiArt;
+            this.vidaActual=vida;
         }
+        public String getnombre(){
+            return this.nombre;
+        } 
+        public Double getvida(){
+            return this.vida;
+        } 
+        public Double getataque(){
+            return this.ataque;
+        }
+        public Double getdefensa(){
+            return this.defensa;
+        }
+        public Double getvidaActual(){
+            return this.vidaActual;
+        }
+        public Integer getnivel(){
+            return this.nivel;
+        }
+        public String getTipo(){
+            return this.tipo;
+        }
+        public Array getlistaMovimientos(){
+            return this.listaMovimientos;
+        }
+
 
     }
 
-    ;
+    
 
 }

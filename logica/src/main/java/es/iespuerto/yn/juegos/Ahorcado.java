@@ -4,47 +4,132 @@ import java.util.*;
 
 public class Ahorcado extends Partida{
 
-        private Integer puntosTotales;
-        private Integer fallos;
-        private Integer dificultad;
-        private ArrayList<String> historialLetras;
-        private String palabraAdivinar;
-        private String palDif1[] =  {"angel", "ojo", "pizza", "enojado", "helado",
-                "calabaza", "flor", "arco", "barba"};
-        private String palDif2[] = {"cerebro", "hebilla", "langosta", "iman", "megafono",
-                "saxofonista", "aspersor", "computadora", "libertad"};
-        private String palDif3[] = {"adaptacion", "evaluacion", "diagnostico", "circulacion",
-                "procedimiento", "trasladar", "ocupacional", "geolocalizacion", "trasnochador"
-        };
-        /**
-         * Constructor de la clase con 2 parametros 
-         * @param jugador 1º jugador
-         * @param dificultad nivel de dificultad
-         */
-        public Ahorcado(Integer id, Jugador jugador, Integer dificultad) {
-            super(id, jugador);
 
-            this.puntosTotales = 0;
-            this.fallos = 0;
-            this.dificultad = dificultad;
-            this.historialLetras = new ArrayList<String>();
+    public String palabraSecreta;
+    public int errores;
+    public boolean victoria;
+    private ArrayList<String> historialLetras;
+    public final String[] palabras = {
+        "prueba", "gato", "murcie"
+        + "lago", "caballero", "esternocleidomastoideo", "perro", "frances", 
+        "canario", "telefono", "ordenador", "compilar", "televisor", "aguacate",
+        "guatemala", "hamburguesa"
+    };//poner palabras en el String
 
-            Random rnd = new Random();
-            if (dificultad == 1) {
-                int aleatorio = rnd.nextInt(palDif1.length);
-                palabraAdivinar = palDif1[aleatorio];
-            } else if (dificultad == 2) {
-                int aleatorio = rnd.nextInt(palDif2.length);
-                palabraAdivinar = palDif2[aleatorio];
-            } else {
-                int aleatorio = rnd.nextInt(palDif3.length);
-                palabraAdivinar = palDif3[aleatorio];
+    /**
+     * Constructor base
+     */
+    public Ahorcado() {
+        this.errores = 0;
+        this.victoria = false;
+        generarPalabraSecreta();
+        historialLetras = new ArrayList<>();
+    }
+
+    /**
+     * Metodo que suma 1 a los errores al introducir un caracter
+     *
+     * @param letra
+     */
+    public void aumentarErrorLetra(String letra) {
+        addLetra(letra);
+        if (!palabraSecreta.contains(letra)) {
+            this.errores += 1;
+        } else {
+            compararOcultarPalabra();
+        }
+    }
+
+    /**
+     * Método que suma 1 a los errores al introducir una palabra completa
+     *
+     * @param palabra
+     */
+    public void aumentarErrorPalabra(String palabra) {
+        if (!palabraSecreta.equals(palabra)) {
+            this.errores += 1;
+        } else {
+            addLetra(palabra);
+            compararOcultarPalabra();
+        }
+    }
+
+    /**
+     * Metodo que agrega cadenas de texto
+     *
+     * @param letra devueve letras
+     */
+    public void addLetra(String letra) {
+        historialLetras.add(letra);
+    }
+
+    /**
+     * Metodo que dependiendo de la palabra secreta genera los guiones necesario
+     * y genera un array de String en el que esta la palabra secreta separada en
+     * caracteres
+     *
+     * @return devuelve guiones por cada char de la palabra a adivinar
+     */
+    public String compararOcultarPalabra() {
+        String palabra = this.palabraSecreta;
+        String letraselegidas = "";
+        for (int i = 0; i < historialLetras.size(); i++) {
+            letraselegidas += historialLetras.get(i);
+        }
+        String palabraconguiones = palabra.replaceAll("[^ " + letraselegidas + "]", "_ ");
+
+        return palabraconguiones;
+    }
+
+    /**
+     * Metodo que elige una palabra aleatoriamente del String
+     */
+    public void generarPalabraSecreta() {
+        this.palabraSecreta = this.palabras[(int) ((Math.random() * this.palabras.length))];
+    }
+
+    //GETTERS Y SETTERS
+    public String getPalabraSecreta() {
+        return palabraSecreta;
+    }
+
+    public String getHistorialLetras() {
+        String letrasStr = "";
+
+        for (String Letra : historialLetras) {
+            letrasStr += Letra;
+        }
+        String historialStr = "";
+
+        if (letrasStr.length() > 0) {
+            for (int i = 0; i < letrasStr.length(); i++) {
+                historialStr += letrasStr.charAt(i) + ",";
             }
-
         }
 
-
-
+        return historialStr;
     }
+
+    /**
+     * Metodo que devuelve el numero de errores
+     *
+     * @return devuelve errores
+     */
+    public Integer getNumErrores() {
+        return errores;
+    }
+
+    /**
+     * Metodo que anota los fallos
+     *
+     * @param errores devuelve los errores
+     */
+    public void setFallos(Integer errores) {
+        this.errores = errores;
+    }
+
+}
+       
+    
 
 
