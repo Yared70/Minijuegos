@@ -17,9 +17,9 @@ public class Pokemon extends Partida {
         this.victoria = false;
     }
 
-    public String atacar(Pokemon pokemon1,Pokemon pokemon2,Movimiento movimiento){
+    public String atacar(Criatura pokemon1,Criatura pokemon2,Movimiento movimiento){
         String mensaje="";
-        int ataque=;
+        Double ataque=pokemon1.getAtaque();
 
         return mensaje;
     }
@@ -104,30 +104,43 @@ public class Pokemon extends Partida {
             this.asciiArt = asciiArt;
             this.vidaActual=vida;
         }
-        public String getnombre(){
-            return this.nombre;
-        } 
-        public Double getvida(){
-            return this.vida;
-        } 
-        public Double getataque(){
-            return this.ataque;
+
+        public String getNombre() {
+            return nombre;
         }
-        public Double getdefensa(){
-            return this.defensa;
+
+        public Double getVida() {
+            return vida;
         }
-        public Double getvidaActual(){
-            return this.vidaActual;
+
+        public Double getVidaActual() {
+            return vidaActual;
         }
-        public Integer getnivel(){
-            return this.nivel;
+
+        public Double getAtaque() {
+            return ataque;
         }
-        public String getTipo(){
-            return this.tipo;
+
+        public Double getDefensa() {
+            return defensa;
         }
-        public Array getlistaMovimientos(){
-            return this.listaMovimientos;
+
+        public Integer getNivel() {
+            return nivel;
         }
+
+        public Tipo getTipo() {
+            return tipo;
+        }
+
+        public Movimiento[] getListaMovimientos() {
+            return listaMovimientos;
+        }
+
+        public String getAsciiArt() {
+            return asciiArt;
+        }
+
 
 
     }
