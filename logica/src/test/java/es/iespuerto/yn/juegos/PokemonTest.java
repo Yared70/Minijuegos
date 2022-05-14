@@ -22,7 +22,6 @@ public class PokemonTest {
          charmander = pokemonJuego.new Criatura("charmander", 60.0, 5.0, 5.0, 5, fuego, null);
          charmeleon = pokemonJuego.new Criatura("charmeleon", 80.0, 10.0, 10.0, 8, fuego, null);
          ascuas = pokemonJuego.new Movimiento("ascuas", 25, 60.0, fuego);
-         pokemonJuego.agregarPokemonSalvaje(charmander);
         }
 
     }
@@ -35,19 +34,9 @@ public class PokemonTest {
     }
     @Test
     public void agregarPokemonSalvajeTest(){
-        Assertions.assertEquals(true,
+        Assertions.assertTrue(
             pokemonJuego.agregarPokemonSalvaje(charmander),"No se agrego bien el pokemon Salvaje");
     }
-    
-    @Test
-    public void BuscarCombateTest(){
-    Assertions.assertEquals(charmander,
-        pokemonJuego.BuscarCombate(),
-        "La operacion de BuscarCombate no funciona correctamente");
-    }
-    
-    
-    
     @Test
     public void atacarTest(){
 
@@ -55,7 +44,13 @@ public class PokemonTest {
         pokemonJuego.atacar(charmander, charmeleon, ascuas),
         "La operacion de atacar no funciona correctamente");
     }
-
+    @Test
+    public void BuscarCombateTest(){
+        pokemonJuego.agregarPokemonSalvaje(charmander);
+    Assertions.assertSame(charmander,
+        pokemonJuego.BuscarCombate(),
+        "La operacion de BuscarCombate no funciona correctamente");
+    }
     @Test
     public void constructorMovimientoTest(){
 

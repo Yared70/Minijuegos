@@ -37,7 +37,7 @@ public class Pokemon extends Partida {
         return true;
     }
     public Criatura BuscarCombate(){
-        int intPokemon = (int)(Math.random()*this.pokemonsalvajes.size())+1;
+        int intPokemon = (int) (Math.random()*this.pokemonsalvajes.size())+1;
         Criatura pokemon = pokemonsalvajes.get(intPokemon);
         return pokemon;
 }
