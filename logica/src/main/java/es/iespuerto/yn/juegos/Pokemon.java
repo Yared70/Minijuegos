@@ -1,29 +1,47 @@
 package es.iespuerto.yn.juegos;
 
 
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.TreeMap;
 
 public class Pokemon extends Partida {
-
-    private ArrayList<Criatura> Pokemons;
+    private ArrayList<Criatura> pokemons;
+    private ArrayList<Criatura> pokemonsalvajes;
     private boolean victoria;
-
-
+    
+    
     public Pokemon(Integer id, Jugador jugador) {
         super(id, jugador);
-        this.Pokemons = new ArrayList<Criatura>();
+        this.pokemons = new ArrayList<Criatura>();
         this.victoria = false;
     }
-
+    public boolean agregarPokemonSalvaje(Criatura pokemon){
+        this.pokemonsalvajes.add(pokemon);
+        return true;
+    }
+    
     public String atacar(Criatura pokemon1,Criatura pokemon2,Movimiento movimiento){
-        String mensaje="";
         Double ataque=pokemon1.getAtaque();
-
+        Double defensa=pokemon2.getDefensa();
+        Double vida=pokemon2.getVidaActual();
+        Double danio=movimiento.getDanio();
+        Double vidaAquitar;
+        Double potencia=danio/100;
+        vidaAquitar=(ataque*potencia)-(defensa/2);
+        Double vidaFinal=vida-vidaAquitar;
+        pokemon2.setVidaActual(vidaFinal);
+        
+        String mensaje="El ataque bajo"+ vidaAquitar +"de vida a " + pokemon2.getNombre();
         return mensaje;
     }
-
+    public Criatura BuscarCombate(){
+        int pokemonSalvaje = (int)Math.random()*this.pokemonsalvajes.size();
+        Criatura pokemon = pokemonsalvajes.get(pokemonSalvaje);
+        return pokemon;
+}
+    
     class Tipo {
 
         private String nombre;
@@ -64,6 +82,10 @@ public class Pokemon extends Partida {
             this.danio = danio;
             this.tipo = tipo;
         }
+       public Double getDanio() {
+            return danio;
+        }
+
 
     }
 
@@ -105,18 +127,13 @@ public class Pokemon extends Partida {
             this.vidaActual=vida;
         }
 
-        public String getNombre() {
-            return nombre;
-        }
-
-        public Double getVida() {
-            return vida;
+        public void setVidaActual(Double vidaActual) {
+            this.vidaActual = vidaActual;
         }
 
         public Double getVidaActual() {
             return vidaActual;
         }
-
         public Double getAtaque() {
             return ataque;
         }
@@ -125,26 +142,13 @@ public class Pokemon extends Partida {
             return defensa;
         }
 
-        public Integer getNivel() {
-            return nivel;
-        }
-
         public Tipo getTipo() {
             return tipo;
         }
 
-        public Movimiento[] getListaMovimientos() {
-            return listaMovimientos;
-        }
-
-        public String getAsciiArt() {
-            return asciiArt;
-        }
-
-
-
     }
 
-    
+    ;
 
 }
+
