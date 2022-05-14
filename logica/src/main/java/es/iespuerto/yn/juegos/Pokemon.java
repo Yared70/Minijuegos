@@ -22,7 +22,7 @@ public class Pokemon extends Partida {
         return true;
     }
     
-    public String atacar(Criatura pokemon1,Criatura pokemon2,Movimiento movimiento){
+    public boolean atacar(Criatura pokemon1,Criatura pokemon2,Movimiento movimiento){
         Double ataque=pokemon1.getAtaque();
         Double defensa=pokemon2.getDefensa();
         Double vida=pokemon2.getVidaActual();
@@ -33,8 +33,8 @@ public class Pokemon extends Partida {
         Double vidaFinal=vida-vidaAquitar;
         pokemon2.setVidaActual(vidaFinal);
         
-        String mensaje="El ataque bajo"+ vidaAquitar +"de vida a " + pokemon2.getNombre();
-        return mensaje;
+      
+        return true;
     }
     public Criatura BuscarCombate(){
         int pokemonSalvaje = (int)Math.random()*this.pokemonsalvajes.size();
@@ -144,6 +144,10 @@ public class Pokemon extends Partida {
 
         public Tipo getTipo() {
             return tipo;
+        }
+
+        private String getNombre() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
     }

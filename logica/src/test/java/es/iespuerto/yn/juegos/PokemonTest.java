@@ -1,6 +1,7 @@
 package es.iespuerto.yn.juegos;
 
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,19 +34,20 @@ public class PokemonTest {
     }
     @Test
     public void agregarPokemonSalvajeTest(){
-        Assertions.assertTrue(
+        Assertions.assertEquals(true,
             pokemonJuego.agregarPokemonSalvaje(charmander),"No se agrego bien el pokemon Salvaje");
     }
     @Test
     public void atacarTest(){
- Assertions.assertEquals("El ataque bajo",
+
+ Assertions.assertEquals(true,
         pokemonJuego.atacar(charmander, charmeleon, ascuas),
         "La operacion de atacar no funciona correctamente");
     }
     @Test
     public void BuscarCombateTest(){
         pokemonJuego.agregarPokemonSalvaje(charmander);
-    Assertions.assertEquals(charmander,
+    Assertions.assertSame(charmander,
         pokemonJuego.BuscarCombate(),
         "La operacion de BuscarCombate no funciona correctamente");
     }
@@ -89,7 +91,7 @@ public class PokemonTest {
         }
     @Test
     public void CriaturagetTipoTest(){
-        Assertions.assertEquals(fuego),
+        Assertions.assertSame(fuego,
             charmander.getTipo(),
             "La operacion de getTipo no funciona correctamente");
         }
