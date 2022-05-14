@@ -15,6 +15,7 @@ public class Pokemon extends Partida {
     public Pokemon(Integer id, Jugador jugador) {
         super(id, jugador);
         this.pokemons = new ArrayList<Criatura>();
+        this.pokemonsalvajes = new ArrayList<Criatura>();
         this.victoria = false;
     }
     public boolean agregarPokemonSalvaje(Criatura pokemon){
@@ -37,7 +38,7 @@ public class Pokemon extends Partida {
         return true;
     }
     public Criatura BuscarCombate(){
-        int intPokemon = (int) (Math.random()*this.pokemonsalvajes.size())+1;
+        int intPokemon = (int) (Math.random()*this.pokemonsalvajes.size());
         Criatura pokemon = pokemonsalvajes.get(intPokemon);
         return pokemon;
 }

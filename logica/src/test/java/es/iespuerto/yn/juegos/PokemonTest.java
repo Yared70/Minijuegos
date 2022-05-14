@@ -34,8 +34,11 @@ public class PokemonTest {
     }
     @Test
     public void agregarPokemonSalvajeTest(){
+
+        Pokemon.Criatura charizard = pokemonJuego.new Criatura("charizard", 80.0, 10.0, 10.0, 8, fuego, null);
+
         Assertions.assertTrue(
-            pokemonJuego.agregarPokemonSalvaje(charmander),"No se agrego bien el pokemon Salvaje");
+            pokemonJuego.agregarPokemonSalvaje(charizard),"No se agrego bien el pokemon Salvaje");
     }
     @Test
     public void atacarTest(){
@@ -96,3 +99,4 @@ public class PokemonTest {
             "La operacion de getTipo no funciona correctamente");
         }
 }
+

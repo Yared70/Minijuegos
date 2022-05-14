@@ -19,7 +19,8 @@ public class Ahorcado extends Partida{
     /**
      * Constructor base
      */
-    public Ahorcado() {
+    public Ahorcado(Integer id, Jugador jugador) {
+        super(id, jugador);
         this.errores = 0;
         this.victoria = false;
         generarPalabraSecreta();
