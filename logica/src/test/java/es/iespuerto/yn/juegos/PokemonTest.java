@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.net.IDN;
+
+import static es.iespuerto.yn.juegos.PartidaTest.ID;
+import static es.iespuerto.yn.juegos.PartidaTest.JUGADOR;
+
 public class PokemonTest {
 
     Pokemon pokemon;
@@ -13,7 +18,7 @@ public class PokemonTest {
 
         if(pokemon == null){
 
-            pokemon = new Pokemon();
+            pokemon = new Pokemon(ID, JUGADOR);
 
         }
 
@@ -22,7 +27,7 @@ public class PokemonTest {
     @Test
     public void constructorTest(){
 
-        Assertions.assertNotNull(pokemon, "El juego no puede ser nulo");
+        Assertions.assertNotNull(pokemon, "El pokemon no puede ser nulo");
 
     }
 

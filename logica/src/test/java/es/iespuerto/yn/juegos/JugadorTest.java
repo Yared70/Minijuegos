@@ -21,6 +21,13 @@ public class JugadorTest {
     }
 
     @Test
+    public void constructorTest(){
+
+        Assertions.assertNotNull(jugador, "El jugador no puede ser nulo");
+
+    }
+
+    @Test
     public void toStringTest(){
 
         Assertions.assertNotNull(jugador.toString(), "Respuesta nula");

@@ -25,6 +25,7 @@ public class Ahorcado extends Partida{
         this.victoria = false;
         generarPalabraSecreta();
         historialLetras = new ArrayList<>();
+
     }
 
     /**
@@ -32,13 +33,18 @@ public class Ahorcado extends Partida{
      *
      * @param letra
      */
-    public void aumentarErrorLetra(String letra) {
+    public boolean aumentarErrorLetra(String letra) {
+
+        boolean metodoOK = false;
         addLetra(letra);
         if (!palabraSecreta.contains(letra)) {
             this.errores += 1;
+            metodoOK = true;
         } else {
+            metodoOK = true;
             compararOcultarPalabra();
         }
+        return metodoOK;
     }
 
     /**

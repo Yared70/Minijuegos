@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static es.iespuerto.yn.juegos.PartidaTest.ID;
+import static es.iespuerto.yn.juegos.PartidaTest.JUGADOR;
+
 public class SnakeTest {
 
     Snake snake;
@@ -13,7 +16,7 @@ public class SnakeTest {
 
         if(snake == null){
 
-            //snake = new Snake();
+            snake = new Snake(ID, JUGADOR);
 
         }
 
