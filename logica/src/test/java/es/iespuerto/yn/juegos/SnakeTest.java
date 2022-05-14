@@ -29,4 +29,34 @@ public class SnakeTest {
 
     }
 
+    @Test
+    public void addComidaTest(){
+
+        Assertions.assertTrue(snake.addComida(), "No se ha colocado la comida correctamente");
+
+    }
+
+    @Test
+    public void addMuroTest(){
+
+        Assertions.assertTrue(snake.addMuro(), "No se ha colocado el muro correctamente");
+
+        snake.addComida();
+        snake.cantidadMuros = 0;
+        snake.cantidadComidas = 3;
+        Assertions.assertTrue(snake.addMuro(), "Error al colocar un muro");
+        for (int i = 0; i < 5; i++) {
+            Assertions.assertTrue(snake.addMuro(), "Error al colocar un muro");
+        }
+
+
+    }
+
+    @Test
+    public void habraChoqueTest(){
+
+
+
+    }
+
 }

@@ -28,7 +28,7 @@ public class Snake extends Partida{
 
     Random rnd = new Random();
 
-    public void addComida() {
+    public boolean addComida() {
 
         setComida(null);
 
@@ -47,10 +47,13 @@ public class Snake extends Partida{
 
             }
         }
+        return colocado;
 
     }
 
-    public void addMuro() {
+    public boolean addMuro() {
+
+        boolean colocado = false;
 
         if (cantidadMuros <= 40 && cantidadComidas == 3) {
             int murosPuestos = 0;
@@ -60,7 +63,6 @@ public class Snake extends Partida{
                 int direccion = rnd.nextInt(4);
                 int x = 0;
                 int y = 0;
-                boolean colocado = false;
 
                 switch (direccion) {
                     case 0:
@@ -142,6 +144,8 @@ public class Snake extends Partida{
                 murosPuestos += 1;
             }
         }
+        boolean comprobado = true;
+        return comprobado;
 
     }
 
