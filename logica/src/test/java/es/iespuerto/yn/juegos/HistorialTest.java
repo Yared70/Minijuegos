@@ -5,17 +5,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class PokemonTest {
+public class HistorialTest {
 
+<<<<<<< HEAD:logica/src/test/java/es/iespuerto/yn/juegos/PokemonTest.java
     Pokemon pokemonJuego;
     Pokemon.Criatura charmander;
     Pokemon.Criatura charmeleon;
     Pokemon.Tipo fuego;
     Pokemon.Movimiento ascuas;
-    @BeforeEach
-    public void beforeEach(){
+=======
+    Historial historial;
 
+>>>>>>> feature_13:logica/src/test/java/es/iespuerto/yn/juegos/HistorialTest.java
+    @BeforeEach
+    public void BeforeEach(){
+
+<<<<<<< HEAD:logica/src/test/java/es/iespuerto/yn/juegos/PokemonTest.java
         if(pokemonJuego == null){
+=======
+        if(historial == null){
+
+            historial = new Historial();
+>>>>>>> feature_13:logica/src/test/java/es/iespuerto/yn/juegos/HistorialTest.java
 
             pokemonJuego=new Pokemon(1, new Jugador("nau"));
          fuego = pokemonJuego.new Tipo("fuego");
@@ -29,6 +40,7 @@ public class PokemonTest {
     @Test
     public void constructorTest(){
 
+<<<<<<< HEAD:logica/src/test/java/es/iespuerto/yn/juegos/PokemonTest.java
         Assertions.assertNotNull(pokemonJuego, "El juego no puede ser nulo");
 
     }
@@ -98,5 +110,13 @@ public class PokemonTest {
             charmander.getTipo(),
             "La operacion de getTipo no funciona correctamente");
         }
+=======
+        Assertions.assertNotNull(historial, "El historial no puede ser nulo");
+
+    }
+
+
+
+>>>>>>> feature_13:logica/src/test/java/es/iespuerto/yn/juegos/HistorialTest.java
 }
 

@@ -25,6 +25,7 @@ public class Ahorcado extends Partida{
         this.victoria = false;
         generarPalabraSecreta();
         historialLetras = new ArrayList<>();
+
     }
 
     /**
@@ -32,13 +33,18 @@ public class Ahorcado extends Partida{
      *
      * @param letra
      */
-    public void aumentarErrorLetra(String letra) {
+    public boolean aumentarErrorLetra(String letra) {
+
+        boolean metodoOK = false;
         addLetra(letra);
         if (!palabraSecreta.contains(letra)) {
             this.errores += 1;
+            metodoOK = true;
         } else {
+            metodoOK = true;
             compararOcultarPalabra();
         }
+        return metodoOK;
     }
 
     /**
@@ -89,11 +95,6 @@ public class Ahorcado extends Partida{
         this.palabraSecreta = this.palabras[(int) ((Math.random() * this.palabras.length))];
     }
 
-    //GETTERS Y SETTERS
-    public String getPalabraSecreta() {
-        return palabraSecreta;
-    }
-
     public String getHistorialLetras() {
         String letrasStr = "";
 
@@ -111,23 +112,6 @@ public class Ahorcado extends Partida{
         return historialStr;
     }
 
-    /**
-     * Metodo que devuelve el numero de errores
-     *
-     * @return devuelve errores
-     */
-    public Integer getNumErrores() {
-        return errores;
-    }
-
-    /**
-     * Metodo que anota los fallos
-     *
-     * @param errores devuelve los errores
-     */
-    public void setFallos(Integer errores) {
-        this.errores = errores;
-    }
 
 }
        

@@ -15,16 +15,5 @@ abstract class Partida {
         this.fecha = new Date();
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public Jugador getJugador() {
-        return jugador;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
 }
 

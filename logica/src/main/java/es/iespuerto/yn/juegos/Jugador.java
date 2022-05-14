@@ -18,7 +18,13 @@ public class Jugador {
         this.partidas = new TreeMap<Integer, Partida>();
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "nombre='" + nombre + '\'' +
+                ", cantidadPartidas=" + cantidadPartidas +
+                ", partidas=" + partidas +
+                '}';
+    }
 }
 
