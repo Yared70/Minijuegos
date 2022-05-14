@@ -19,7 +19,8 @@ public class Ahorcado extends Partida{
     /**
      * Constructor base
      */
-    public Ahorcado() {
+    public Ahorcado(Integer id, Jugador jugador) {
+        super(id, jugador);
         this.errores = 0;
         this.victoria = false;
         generarPalabraSecreta();
@@ -88,11 +89,6 @@ public class Ahorcado extends Partida{
         this.palabraSecreta = this.palabras[(int) ((Math.random() * this.palabras.length))];
     }
 
-    //GETTERS Y SETTERS
-    public String getPalabraSecreta() {
-        return palabraSecreta;
-    }
-
     public String getHistorialLetras() {
         String letrasStr = "";
 
@@ -110,23 +106,6 @@ public class Ahorcado extends Partida{
         return historialStr;
     }
 
-    /**
-     * Metodo que devuelve el numero de errores
-     *
-     * @return devuelve errores
-     */
-    public Integer getNumErrores() {
-        return errores;
-    }
-
-    /**
-     * Metodo que anota los fallos
-     *
-     * @param errores devuelve los errores
-     */
-    public void setFallos(Integer errores) {
-        this.errores = errores;
-    }
 
 }
        

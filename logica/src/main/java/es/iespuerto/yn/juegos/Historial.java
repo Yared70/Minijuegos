@@ -10,7 +10,4 @@ public class Historial {
         this.historial = new TreeMap<Integer, Partida>();
     }
 
-    public TreeMap<Integer, Partida> getHistorial() {
-        return historial;
-    }
 }
