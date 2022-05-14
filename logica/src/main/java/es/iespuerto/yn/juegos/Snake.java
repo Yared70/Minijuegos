@@ -53,7 +53,6 @@ public class Snake extends Partida{
 
     public boolean addMuro() {
 
-        boolean colocado = false;
 
         if (cantidadMuros <= 40 && cantidadComidas == 3) {
             int murosPuestos = 0;
@@ -63,6 +62,7 @@ public class Snake extends Partida{
                 int direccion = rnd.nextInt(4);
                 int x = 0;
                 int y = 0;
+                boolean colocado = false;
 
                 switch (direccion) {
                     case 0:
@@ -210,7 +210,7 @@ public class Snake extends Partida{
         this.comida = comida;
     }
 
-    public void avanzar() {
+    public boolean avanzar() {
 
         Parte cabeza = this.personaje.getPersonaje().getFirst();
         int xCabeza = cabeza.getX();
@@ -305,6 +305,8 @@ public class Snake extends Partida{
 
         }
 
+        return true;
+
 
     }
 
@@ -322,9 +324,10 @@ public class Snake extends Partida{
 
         }
 
-        public void addParte(Parte parte) {
+        public boolean addParte(Parte parte) {
 
             personaje.addLast(parte);
+            return true;
 
         }
 
